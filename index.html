@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Position 福笑い</title>
+    <meta name="description" content="みんなで笑おう！ Position 福笑い" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- favicon/webclipicon -->
+    <link rel="icon" href="./images/favicon.png" />
+
+    <!-- adobe fonts -->
+    <script>
+      (function (d) {
+        var config = {
+            kitId: 'prw8fna',
+            scriptTimeout: 3000,
+            async: true,
+          },
+          h = d.documentElement,
+          t = setTimeout(function () {
+            h.className =
+              h.className.replace(/\bwf-loading\b/g, '') + ' wf-inactive';
+          }, config.scriptTimeout),
+          tk = d.createElement('script'),
+          f = false,
+          s = d.getElementsByTagName('script')[0],
+          a;
+        h.className += ' wf-loading';
+        tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function () {
+          a = this.readyState;
+          if (f || (a && a != 'complete' && a != 'loaded')) return;
+          f = true;
+          clearTimeout(t);
+          try {
+            Typekit.load(config);
+          } catch (e) {}
+        };
+        s.parentNode.insertBefore(tk, s);
+      })(document);
+    </script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+      integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <p class="header_copy">みんなで笑おう！</p>
+        <h1 class="header_title">Position 福笑い</h1>
+      </header>
+
+      <div class="deco_top-left">
+        <img src="images/cloud01.svg" alt="" />
+      </div>
+      <!-- /.deco_top-left -->
+      <div class="deco_top-right">
+        <img src="images/cloud02.svg" alt="" />
+      </div>
+      <!-- /.deco_top-right -->
+      <div class="deco_bottom-left">
+        <img src="images/fuji.png" alt="" />
+      </div>
+      <!-- /.deco_bottom-left -->
+      <div class="deco_bottom-right">
+        <img src="images/cloud01.svg" alt="" />
+      </div>
+      <!-- /.deco_bottom-right -->
+
+      <main class="main">
+        <div class="main_inner">
+          <div class="part js_part-display">
+            <p class="part_heading">パーツ</p>
+            <div class="part_img-wrapper">
+              <img
+                src="images/eyebrows-left.png"
+                alt=""
+                class="part_img js_part-img"
+              />
+            </div>
+            <!-- /.part_img-wrapper -->
+          </div>
+          <!-- /.part -->
+
+          <div class="canvas js_canvas-filter" id="dom_data">
+            <div class="canvas_base js_canvas-filter">
+              <div class="canvas_base-inner js_canvas"></div>
+              <!-- /.canvas_base-inner -->
+            </div>
+            <!-- /.canvas_base -->
+            <div class="canvas_base_scale">300px</div>
+          </div>
+          <!-- /.canvas -->
+
+          <div class="property js_property-display">
+            <div class="property-select">
+              <button
+                class="property-select_btn property-select_btn__left js_prev"
+              ></button>
+              <div class="property-select_txt">
+                <div class="property-select_num">
+                  <span class="property-select_current js_current">1</span
+                  >/<span class="property-select_length js_length"></span>
+                </div>
+                <!-- /.property-select_num -->
+                <p class="property-select_part js_part-name">右まゆげ</p>
+              </div>
+              <!-- /.property-select_txt -->
+              <button
+                class="property-select_btn property-select_btn__right js_next"
+              ></button>
+            </div>
+            <!-- /.property-select -->
+            <div class="property_list">
+              <div class="property_row">
+                <p class="property_name">Top</p>
+                <div class="property_value-wrapper">
+                  <input
+                    class="property_value js_value__top"
+                    type="number"
+                    placeholder="000"
+                    min="0"
+                    max="300"
+                  />
+                </div>
+                <!-- /.property_value-wrapper -->
+                <div class="property_unit-wrapper">
+                  <select class="property_unit js_unit__top">
+                    <option value="px" selected>px</option>
+                    <option value="%">%</option>
+                  </select>
+                </div>
+                <!-- /.property_unit-wrapper -->
+              </div>
+              <!-- /.property_row -->
+              <div class="property_row">
+                <p class="property_name">Left</p>
+                <div class="property_value-wrapper">
+                  <input
+                    class="property_value js_value__left"
+                    type="number"
+                    placeholder="000"
+                    min="0"
+                    max="300"
+                  />
+                </div>
+                <!-- /.property_value-wrapper -->
+                <div class="property_unit-wrapper">
+                  <select class="property_unit js_unit__left">
+                    <option value="px" selected>px</option>
+                    <option value="%">%</option>
+                  </select>
+                </div>
+                <!-- /.property_unit-wrapper -->
+              </div>
+            </div>
+            <!-- /.property_list -->
+          </div>
+          <!-- /.property -->
+        </div>
+        <!-- /.main_inner -->
+
+        <div class="btn-area">
+          <button class="btn btn__complete js_complete-btn" tabindex="-1">
+            完成!
+          </button>
+          <button class="btn btn__convert js_convert-btn">
+            完成した塾長を<br />
+            ダウンロード！
+          </button>
+          <button class="btn btn__retry js_retry-btn">もう一度やる！</button>
+        </div>
+        <!-- /.btn-area -->
+      </main>
+      <footer class="footer">by ZeroPlus</footer>
+    </div>
+  </body>
+</html>
