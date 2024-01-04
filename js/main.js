@@ -216,17 +216,19 @@ window.addEventListener('DOMContentLoaded', () => {
     PropOutput();
   });
 
-  // TopかLeftの数字を変更
+  // TopかLeftの数値を変更
   inputValue.forEach((input) => {
     input.addEventListener('change', (event) => {
       event.preventDefault();
 
       InputMaxNum(input);
 
+      // 変更したtopの数値を配列に代入
       let prop_topValueChanged = valueTop.value;
       prop_topValue = prop_topValueChanged;
       parts[currentIndex].top.value = prop_topValue;
 
+      // 変更したleftの数値を配列に代入
       let prop_leftValueChanged = valueLeft.value;
       prop_leftValue = prop_leftValueChanged;
       parts[currentIndex].left.value = prop_leftValue;
@@ -273,20 +275,24 @@ window.addEventListener('DOMContentLoaded', () => {
       canvas.appendChild(imgElement);
     });
 
+    // 顔の上のフィルターを非表示にする
     const canvasFilters = document.querySelectorAll('.js_canvas-filter');
     canvasFilters.forEach((canvasFilter) => {
       canvasFilter.classList.add('is-filter-hide');
     });
 
+    // パーツ画像や入力欄を非表示にする
     const propertyDisplay = document.querySelector('.js_property-display');
     const partDisplay = document.querySelector('.js_part-display');
     propertyDisplay.style.visibility = 'hidden';
     partDisplay.style.visibility = 'hidden';
 
+    // 完成ボタンを非表示にして、変換ボタンを表示
     completeBtn.style.display = 'none';
     convertBtn.style.display = 'block';
   });
 
+  // 画像に変換してダウンロード
   const convertToImage = () => {
     const element = document.getElementById('dom_data');
     domtoimage
@@ -302,11 +308,15 @@ window.addEventListener('DOMContentLoaded', () => {
       });
   };
 
+  // 変換ボタンをクリック
   convertBtn.addEventListener('click', (event) => {
     event.preventDefault();
     convertToImage();
+
+    // 変換ボタンを非表示にして、リトライボタンを表示
     retryBtn.style.display = 'block';
 
+    // リトライボタンをクリック
     retryBtn.addEventListener('click', (event) => {
       event.preventDefault();
       location.reload();
@@ -314,6 +324,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// ページの高さを調整
 window.addEventListener('load', () => {
   const windowHeight = window.innerHeight;
   const headerHeight = document.querySelector('.header').offsetHeight;
