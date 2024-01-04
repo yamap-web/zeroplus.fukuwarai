@@ -4,9 +4,9 @@
 window.addEventListener('DOMContentLoaded', () => {
   // variables
   let prop_topValue;
-  const prop_topUnit = 'px';
+  let prop_topUnit = 'px';
   let prop_leftValue;
-  const prop_leftUnit = 'px';
+  let prop_leftUnit = 'px';
   let currentIndex = 0;
   const imgDir = 'images/';
   const parts = [
@@ -241,12 +241,12 @@ window.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
 
       // 変更したtopの単位を配列に代入
-      let prop_topUnitChanged = unitTop.val();
+      let prop_topUnitChanged = unitTop.value;
       prop_topUnit = prop_topUnitChanged;
       parts[currentIndex].top.unit = prop_topUnit;
 
       // 変更したleftの単位を配列に代入
-      let prop_leftUnitChanged = unitLeft.val();
+      let prop_leftUnitChanged = unitLeft.value;
       prop_leftUnit = prop_leftUnitChanged;
       parts[currentIndex].left.unit = prop_leftUnit;
 
