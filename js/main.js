@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const imgDir = 'images/';
   const parts = [
     {
-      name: '右まゆげ',
+      name: '左まゆげ',
       image: imgDir + 'eyebrows-left.png',
       top: {
         value: prop_topValue,
@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
       input: false,
     },
     {
-      name: '左まゆげ',
+      name: '右まゆげ',
       image: imgDir + 'eyebrows-right.png',
       top: {
         value: prop_topValue,
@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
       input: false,
     },
     {
-      name: '右目',
+      name: '左目',
       image: imgDir + 'eye-left.png',
       top: {
         value: prop_topValue,
@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded', () => {
       input: false,
     },
     {
-      name: '左目',
+      name: '右目',
       image: imgDir + 'eye-right.png',
       top: {
         value: prop_topValue,
@@ -294,17 +294,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // 画像に変換してダウンロード
   const convertToImage = () => {
-    const element = document.getElementById('dom_data');
-    domtoimage
-      .toPng(element)
-      .then((URL) => {
-        const newImg = document.createElement('a');
-        newImg.download = 'Image.png';
-        newImg.href = URL;
-        newImg.click();
+    const domData = document.getElementById('dom-data');
+    domtoimage.toPng(domData)
+      .then((dataUrl) => {
+        const link = document.createElement('a');
+        link.download = 'css-fukuwarai.png';
+        link.href = dataUrl;
+        link.click();
       })
       .catch((error) => {
-        console.error('error!', error);
+        console.error('oops, something went wrong!', error);
       });
   };
 
@@ -332,3 +331,11 @@ window.addEventListener('load', () => {
   const mainHeight = windowHeight - (headerHeight + footerHeight);
   document.querySelector('.main').style.height = mainHeight + 'px';
 });
+
+domtoimage.toJpeg(document.getElementById('my-node'), { quality: 0.95 })
+    .then(function (dataUrl) {
+        var link = document.createElement('a');
+        link.download = 'my-image-name.jpeg';
+        link.href = dataUrl;
+        link.click();
+    });

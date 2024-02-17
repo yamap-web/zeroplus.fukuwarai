@@ -14,25 +14,25 @@
     <script>
       (function (d) {
         var config = {
-            kitId: 'prw8fna',
+            kitId: "prw8fna",
             scriptTimeout: 3000,
             async: true,
           },
           h = d.documentElement,
           t = setTimeout(function () {
             h.className =
-              h.className.replace(/\bwf-loading\b/g, '') + ' wf-inactive';
+              h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
           }, config.scriptTimeout),
-          tk = d.createElement('script'),
+          tk = d.createElement("script"),
           f = false,
-          s = d.getElementsByTagName('script')[0],
+          s = d.getElementsByTagName("script")[0],
           a;
-        h.className += ' wf-loading';
-        tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+        h.className += " wf-loading";
+        tk.src = "https://use.typekit.net/" + config.kitId + ".js";
         tk.async = true;
         tk.onload = tk.onreadystatechange = function () {
           a = this.readyState;
-          if (f || (a && a != 'complete' && a != 'loaded')) return;
+          if (f || (a && a != "complete" && a != "loaded")) return;
           f = true;
           clearTimeout(t);
           try {
@@ -47,12 +47,9 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- js -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
-      integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/dom-to-image@2.6.0/dist/dom-to-image.min.js
+    "></script>
     <script src="js/main.js" defer></script>
   </head>
   <body>
@@ -95,7 +92,7 @@
           <!-- /.part -->
 
           <div class="canvas js_canvas-filter">
-            <div class="canvas_base js_canvas-filter" id="dom_data">
+            <div class="canvas_base js_canvas-filter" id="dom-data">
               <div class="canvas_base-inner js_canvas"></div>
               <!-- /.canvas_base-inner -->
             </div>
@@ -115,7 +112,7 @@
                   >/<span class="property-select_length js_length"></span>
                 </div>
                 <!-- /.property-select_num -->
-                <p class="property-select_part js_part-name">右まゆげ</p>
+                <p class="property-select_part js_part-name">左まゆげ</p>
               </div>
               <!-- /.property-select_txt -->
               <button
