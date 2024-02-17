@@ -331,11 +331,3 @@ window.addEventListener('load', () => {
   const mainHeight = windowHeight - (headerHeight + footerHeight);
   document.querySelector('.main').style.height = mainHeight + 'px';
 });
-
-domtoimage.toJpeg(document.getElementById('my-node'), { quality: 0.95 })
-    .then(function (dataUrl) {
-        var link = document.createElement('a');
-        link.download = 'my-image-name.jpeg';
-        link.href = dataUrl;
-        link.click();
-    });
